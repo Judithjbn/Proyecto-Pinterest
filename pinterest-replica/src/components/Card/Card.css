@@ -1,0 +1,77 @@
+.gallery-card {
+  height: auto;
+  margin-bottom: 0;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-card > div {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: brightness(50%) blur(3px);
+  display: none;
+}
+
+.gallery-card:hover > div {
+  display: flex;
+  cursor: zoom-in;
+}
+
+.gallery-card .save-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gallery-card .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gallery-card button {
+  padding: 1rem 1.4rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: var(--logo);
+  color: var(--color-background);
+  font-size: 1rem;
+}
+
+.gallery-card .links a {
+  background-color: var(--transparent);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+}
+
+.gallery-card .links img {
+  width: 24px;
+  height: 24px;
+}
+
+.gallery-card .links div {
+  display: flex;
+  gap: 1rem;
+}
+
+.gallery-card .links-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-card .full-link {
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+}
