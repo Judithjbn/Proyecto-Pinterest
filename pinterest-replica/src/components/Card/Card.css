@@ -1,13 +1,22 @@
 .gallery-card {
-  height: auto;
-  margin-bottom: 0;
+  position: relative;
+  width: 100%; 
+  padding-top: 66.67%;
   border-radius: 1rem;
-  background-size: cover;
+  margin-bottom: 1rem;
+  background-size: cover; /
   background-position: center;
+  overflow: hidden;
 }
-
+.gallery-card img {
+  opacity: 0;
+  max-width: 100%;
+  display: block;
+}
 .gallery-card > div {
-  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   display: flex;
@@ -15,6 +24,9 @@
   justify-content: space-between;
   backdrop-filter: brightness(50%) blur(3px);
   display: none;
+}
+.gallery-card .info {
+  padding: 5%;
 }
 
 .gallery-card:hover > div {

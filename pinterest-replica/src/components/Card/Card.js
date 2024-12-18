@@ -3,8 +3,9 @@ import { iconUpload, iconMore } from "../../assets/icons/icons.js";
 
 export default function createCard(item) {
   return `
-    <li class="gallery-card" style="background-image: url(${item.urls.regular}); border: 10px solid ${item.color}">
-      <div class="info">
+    <li class="gallery-card" style="background-image: url(${item.urls.regular});">
+    <img src="${item.urls.small}" alt="Imagen de gallery" />
+    <div class="info">
         <div class="save-btn">
           <button>Guardar</button>
         </div>
