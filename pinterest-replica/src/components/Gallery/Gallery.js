@@ -2,7 +2,6 @@ import { createApi } from "unsplash-js";
 import createCard from "../Card/Card.js";
 import "./Gallery.css";
 
-// Configuramos la API de Unsplash
 const unsplash = createApi({
   accessKey: import.meta.env.VITE_ACCESS_KEY,
 });
