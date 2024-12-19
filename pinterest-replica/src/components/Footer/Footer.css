@@ -5,3 +5,15 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
+@media (max-width: 768px) {
+  footer {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+}

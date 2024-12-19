@@ -7,10 +7,10 @@ const unsplash = createApi({
 });
 
 export default async function Gallery(query = "mountains") {
-  const fetchImages = async () => {
+  const fetchImages = async (keyword) => {
     try {
       const response = await unsplash.search.getPhotos({
-        query: query,
+        query: keyword,
         page: 1,
         perPage: 10, 
       });
@@ -23,17 +23,26 @@ export default async function Gallery(query = "mountains") {
   };
 
   const renderGallery = async () => {
-    const images = await fetchImages();
+    const images = await fetchImages(query);
+    
+    if (images.length === 0) {
+      const catsImages = await fetchImages("cats");
 
-    const galleryHTML = images
-      .map((image) => createCard(image))
-      .join("");
-
-    document.querySelector("main").innerHTML = `
-      <ul class="gallery">
-        ${galleryHTML}
-      </ul>
-    `;
+      document.querySelector("main").innerHTML = `
+        <p class="no-results">
+          No se encontraron resultados para "${query}". Mostrando resultados para "cats". Intenta con otra palabra o frase.
+        </p>
+        <ul class="gallery">
+          ${catsImages.map((image) => createCard(image)).join("")}
+        </ul>
+      `;
+    } else {
+      document.querySelector("main").innerHTML = `
+        <ul class="gallery">
+          ${images.map((image) => createCard(image)).join("")}
+        </ul>
+      `;
+    }
   };
 
   await renderGallery();

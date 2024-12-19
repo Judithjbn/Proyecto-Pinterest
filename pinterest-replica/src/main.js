@@ -5,7 +5,7 @@ import Gallery from "./components/Gallery/Gallery.js";
 
 const startGallery = (query = "space astronaut") => Gallery(query);
 
-const header = new Header(startGallery);
+const header = new Header(startGallery, () => startGallery("space astronaut"));
 header.render();
 
 startGallery();

@@ -8,11 +8,6 @@
   background-position: center;
   overflow: hidden;
 }
-.gallery-card img {
-  opacity: 0;
-  max-width: 100%;
-  display: block;
-}
 .gallery-card > div {
   position: absolute;
   top: 0;
@@ -42,7 +37,7 @@
 .gallery-card .links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .gallery-card button {
